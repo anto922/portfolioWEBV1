@@ -17,14 +17,14 @@ class PortfolioController extends Controller
         $studies = Studies::all();
         $skills  = skills::all();
         $exp = Experience::all();
-        $works = Works::all();
+        $works = works::join('skills', 'works.id_skill', '=', 'skills.id')->select('works.*', 'skills.description as skill_description')->get();
         
         
-        $skills = $skills->toArray();
+        $filas_skills = is_float(count($skills)/4) ? round(count($skills)/4+1): count($skills)/4 ; 
         
         
 
-		return view('index',compact('user','studies','skills','exp','works'));
+		return view('index',compact('user','studies','skills','exp','works','filas_skills'));
 		
 		
 		

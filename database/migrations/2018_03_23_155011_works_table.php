@@ -20,7 +20,6 @@ class WorksTable extends Migration
             $table->string('description',50);
             $table->string('link',50);
             $table->string('icon_work')->default(null);
-            $table->integer('row_order')->unsigned();
             $table->integer('id_skill')->unsigned();
             $table->integer('id_user')->unsigned();
             $table->foreign('id_user')->references('id')->on('user');

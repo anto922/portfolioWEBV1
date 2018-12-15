@@ -16,6 +16,7 @@ class studieSeeder extends Seeder
             'date_start'=> '2004-02-01',
             'date_end' => '2008-02-01',
             'school' =>'IES SEVERO OCHOA',
+            'course'=>' ',
             'id_province'=>3,
             'id_city'=>214,
             'id_user'=> 1
@@ -26,6 +27,7 @@ class studieSeeder extends Seeder
             'date_start'=> '2004-02-01',
             'date_end' => '2008-02-01',
             'school' =>'IES MACIA ABELA',
+            'course'=>' ',
             'id_province'=>3,
             'id_city'=>214,
             'id_user'=> 1
@@ -36,6 +38,7 @@ class studieSeeder extends Seeder
             'date_start'=> '2004-02-01',
             'date_end' => '2008-02-01',
             'school' =>'IES NIT L ALBA ',
+            'course'=>' ',
             'id_province'=>3,
             'id_city'=>214,
             'id_user'=> 1

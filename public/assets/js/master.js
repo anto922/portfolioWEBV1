@@ -35,6 +35,13 @@ $("#myNav a").on('click', function (event) {
 
 // / Login Panel administrador
 $(document).ready(function () {
+
+	$("#works_table").DataTable({
+		searching: false,
+		"bInfo": false,
+		"bLengthChange": false
+	
+	});
 	
 // Accion Login boton
 	$("#loginButton").click(function () {
@@ -91,7 +98,7 @@ $(document).ready(function () {
 	 
 	
 	
-	
+
 
 	
 

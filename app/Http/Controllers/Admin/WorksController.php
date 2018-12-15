@@ -1,10 +1,10 @@
 <?php
 namespace App\Http\Controllers\Admin;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Works;
 use App\Skills;
+use App\Works;
+use Illuminate\Http\Request;
 
 class WorksController extends Controller
 {
@@ -38,12 +38,12 @@ class WorksController extends Controller
             'description' => 'required',
             'id_skill' => 'required',
             'link' => 'required',
-            'icon_work' => 'required'
+            'icon_work' => 'required',
         ], [
             'description.required' => 'El campo descripcion es obligatorio',
             'id_skill.required' => 'El campo lenguaje es obligatorio',
             'link.required' => 'El campo enlace es obligatorio',
-            'icon_work.required' => 'El campo icono es obligatorio'
+            'icon_work.required' => 'El campo icono es obligatorio',
         ]);
 
         $request->hasFile('icon_work') ? $ruta = $request->file('icon_work')->store('public') : $ruta = "";
@@ -53,7 +53,7 @@ class WorksController extends Controller
             'id_skill' => $datos["id_skill"],
             'link' => $datos["link"],
             'icon_work' => $ruta,
-            'id_user' => auth()->id()
+            'id_user' => auth()->id(),
         ]);
         return redirect('AdminPanel/Trabajos')->with('status', 'Trabajo añadido correctamente');
     }
@@ -71,21 +71,21 @@ class WorksController extends Controller
             'description' => 'required',
             'id_skill' => 'required',
             'link' => 'required',
-            'icon_work'=>''
+            'icon_work' => '',
         ], [
             'description.required' => 'El campo descripcion es obligatorio',
             'id_skill.required' => 'El campo lenguaje es obligatorio',
-            'link.required' => 'El campo enlace es obligatorio'
+            'link.required' => 'El campo enlace es obligatorio',
         ]);
 
-       ($work->icon_work !=null)? $ruta=$work->icon_work : $ruta = $request->file('icon_work')->store('public');
+        $request->hasFile('icon_work') ? $ruta = $request->file('icon_work')->store('public') : $ruta = $work->icon_work;
 
         $work->whereId($work->id)->update([
             'description' => $datos["description"],
             'id_skill' => $datos["id_skill"],
             'link' => $datos["link"],
             'icon_work' => $ruta,
-            'id_user' => auth()->id()
+            'id_user' => auth()->id(),
         ]);
 
         return redirect('AdminPanel/Trabajos')->with('status', 'Trabajos actualizado correctamente');

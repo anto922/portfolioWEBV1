@@ -19,7 +19,6 @@ class SkillUserTable extends Migration
 			$table->string('description',50);
 			$table->integer('level')->unsigned();
             $table->string('icon_skill')->default(null);
-            $table->integer('row_order')->unsigned();
 			$table->integer('id_user')->unsigned();
 			$table->foreign('id_user')->references('id')->on('user');
             $table->timestamps();
