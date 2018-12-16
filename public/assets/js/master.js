@@ -40,10 +40,10 @@ $(document).ready(function () {
 		searching: false,
 		"bInfo": false,
 		"bLengthChange": false
-	
+
 	});
-	
-// Accion Login boton
+
+	// Accion Login boton
 	$("#loginButton").click(function () {
 
 		var Email = $("#email").val();
@@ -62,7 +62,7 @@ $(document).ready(function () {
 			},
 			success: function (response) {
 
-				window.location.href = "http://localhost/portfolioWEBV1/AdminPanel/Dashboard";
+				window.location.href = "http://localhost/git_repositorios/portfolioWEBV1/AdminPanel/Dashboard";
 
 			},
 			error: function (data) {
@@ -88,26 +88,26 @@ $(document).ready(function () {
 
 
 
-	
-// /scroll en cada parrafo
+
+	// /scroll en cada parrafo
 	AOS.init();
-	
-		
-	
-	
-	 
-	
-	
-
-
-	
 
 
 
 
-	
 
-	
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
