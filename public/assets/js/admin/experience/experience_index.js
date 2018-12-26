@@ -1,18 +1,19 @@
-function eliminarExperiencia(id,_Token){
-	
-				$.ajax({
-				url: "http://localhost/portfolioWEBV1/AdminPanel/Experiencia/" + id,
-				method:'POST',
-				data: {
-					_token: _Token,_method:"DELETE"},
-				success: function (response) {
+function eliminarExperiencia(id, _Token) {
 
-					window.location.href = "http://localhost/portfolioWEBV1/AdminPanel/Experiencia";
-				}
+	$.ajax({
+		url: "http://localhost/portfolioWEBV1/AdminPanel/Experiencia/" + id,
+		method: 'POST',
+		data: {
+			_token: _Token, _method: "DELETE"
+		},
+		success: function (response) {
 
-			});
-	
-}	
+			window.location.href = "http://localhost/git_repositorios/portfolioWEBV1/AdminPanel/Experiencia";
+		}
+
+	});
+
+}
 
 
 
@@ -20,9 +21,9 @@ function eliminarExperiencia(id,_Token){
 $("#experience-table").DataTable({
 	searching: false,
 	columnDefs: [{
-			orderable: false,
-			targets: 5
-		}
+		orderable: false,
+		targets: 5
+	}
 
 	],
 	"bInfo": false
@@ -33,19 +34,18 @@ $("#experience-table").DataTable({
 
 
 $(".trash_exp").click(function () {
-		var id_exp = $(this).val();
-		var _Token = $('[name=_token]').val();
+	var id_exp = $(this).val();
+	var _Token = $('[name=_token]').val();
 
-		
-         $("#confirm").click(function(){
-	
-             eliminarExperiencia(id_exp,_Token);
-			
-	
 
-		});
+	$("#confirm").click(function () {
+
+		eliminarExperiencia(id_exp, _Token);
+
+
 
 	});
-	
-	
-	
+
+});
+
+
