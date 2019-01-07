@@ -82,16 +82,17 @@
 
 
 			<div class="row mt-5">
-				<div class="col-md-6 offset-3">
+				<div class="col-md-6 offset-3 mt-4">
 					@foreach ($skills as $skill)
 
 
 
-					<span class="text-white"><span class="oi oi-grid-three-up"></span>&nbsp;&nbsp;{{$skill->description}}</span>
+					<span class="text-white">{{$skill->description}} <span class="float-right">{{$skill->level}}%</span></span>
 
-					<div class="progress">
+					<div class="progress" style="height:5px">
+
 						<div class="progress-bar" role="progressbar" style="width: {{$skill->level}}%;" aria-valuenow="{{$skill->level}}" aria-valuemin="0"
-						 aria-valuemax="100">{{$skill->level}}%</div>
+						 aria-valuemax="100"></div>
 					</div>
 
 
@@ -128,12 +129,56 @@
 				@endforeach
 
 			</div>
+		</section>
 	</div>
 
 </div>
 
-</section>
-</div>
+<div class="row">
+	<div class="col-md-12  bg-darkV2">
+		<section id="contacto" class="contacto  my-5 py-5" data-aos="fade-up-left">
+			<h2 class="display-4 text-center text-white">Contacto</h2>
+
+
+
+
+			<div class="row mt-5">
+				<div class="col-md-6 offset-3 mt-4">
+					<form id="mail-form">
+						{!! csrf_field() !!}
+						<div class="form-group">
+							<label class="text-white" for="name">Nombre</label>
+							<input type="text" class="form-control" id="name">
+
+						</div>
+						<div class="form-group">
+							<label class="text-white" for="emailContact">Email</label>
+							<input type="emailContact" class="form-control" id="emailContact">
+
+						</div>
+						<div class="form-group">
+							<label class="text-white" for="subject">Asunto</label>
+							<input type="text" class="form-control" id="subject">
+						</div>
+						<div class="form-group">
+							<label class="text-white" for="mensaje">Mensaje</label>
+							<textarea id="msg" class="form-control" cols="30" rows="10"></textarea>
+						</div>
+
+						<button id="sendEmail" type="button" class="btn btn-primary">Enviar</button>
+					</form>
+
+					<div id="notifMail">
+
+
+					</div>
+				</div>
+
+			</div>
+
+
+		</section>
+	</div>
 </div>
 @endsection
 

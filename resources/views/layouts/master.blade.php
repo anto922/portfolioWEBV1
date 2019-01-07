@@ -61,7 +61,7 @@
                             <a class="nav-link" href="#habilidades">Habilidades</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{url('/contacto')}}">Contacto</a>
+                            <a class="nav-link" href="#contacto">Contacto</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="javascript:void(0)" data-toggle="modal" data-target="#loginAdmin" data-whatever="@mdo">Admin</a>
