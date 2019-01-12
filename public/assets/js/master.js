@@ -92,44 +92,51 @@ $(document).ready(function () {
 	// enviar correo contacto
 
 	$("#sendEmail").click(function () {
-
+		debugger;
 		var Email = $("#emailContact").val();
 		var Name = $("#name").val();
 		var Subject = $("#subject").val();
 		var Msg = $("#msg").val();
 		var _Token = $('#mail-form [name=_token]').val();
 
+		if (Email != "" && Name != "" && Subject != "" && Msg != "") {
+
+			$.ajax({
+
+				method: "POST",
+				url: "sendMail",
+				data: {
+					email: Email,
+					name: Name,
+					subject: Subject,
+					msg: Msg,
+					_token: _Token
+				},
+				success: function (response) {
+
+					if (response == "0") {
+						$("#notifMail").html('<div class="alert alert-success alert-dismissible fade show" role="alert">' +
+							'Correo enviado correctamente' +
+							'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+							'</div>');
+					} else {
+						$("#notifMail").html('<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+							'Error al enviar correo' +
+							'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+							'</div>');
+					}
 
 
-		$.ajax({
-
-			method: "POST",
-			url: "sendMail",
-			data: {
-				email: Email,
-				name: Name,
-				subject: Subject,
-				msg: Msg,
-				_token: _Token
-			},
-			success: function (response) {
-
-				if (response == "0") {
-					$("#notifMail").html('<div class="alert alert-success alert-dismissible fade show" role="alert">' +
-						'Correo enviado correctamente' +
-						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-						'</div>');
-				} else {
-					$("#notifMail").html('<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
-						'Error al enviar correo' +
-						'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
-						'</div>');
 				}
 
+			});
 
-			}
-
-		});
+		} else {
+			$("#notifMail").html('<div class="alert alert-danger alert-dismissible fade show" role="alert">' +
+				'Error : rellene los campos obligatorios' +
+				'<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>' +
+				'</div>');
+		}
 	});
 
 

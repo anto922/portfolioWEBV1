@@ -12,7 +12,7 @@
 
 <div class="card">
 	<div class="card-header bg-dark text-white">
-		<b>Editar Perfil</b>
+		<span class="oi oi-grid-four-up"></span> <b>Editar Perfil</b>
 	</div>
 	<div class="card-body">
 		<form method="POST" action="{{url("AdminPanel/Perfil/{$user->id}")}}" class="needs-validation" enctype="multipart/form-data"> {!! csrf_field() !!} {{method_field('PUT')}}
@@ -25,47 +25,51 @@
 
 			<div class="row">
 
-				<div class="col-md-5">
+				<div class="col-md-6">
 					<div class="form-group">
-						<label for="formGroupExampleInput">Nombre</label>
-						<input type="text" class="form-control" name="name" value="{{old('name',$user->name)}}" readonly/>
+						<label for="name">Nombre</label>
+						<input type="text" class="form-control" name="name" id="name" value="{{old('name',$user->name)}}" readonly/>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="formGroupExampleInput">Apellidos</label>
-						<input type="text" class="form-control" name="surname" value="{{old('surname',$user->surname)}}" readonly/>
+						<label for="surname">Apellidos</label>
+						<input type="text" class="form-control" name="surname" id="surname" value="{{old('surname',$user->surname)}}" readonly/>
 					</div>
 				</div>
 			</div>
 
 
 			<div class="row">
+
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="formGroupExampleInput">Edad</label>
-						<input type="text" class="form-control" name="age" value="{{old('age',$user->age)}}" />
+						<label for="age">Edad</label>
+						<input type="text" class="form-control" name="age" id="age" value="{{old('age',$user->age)}}" />
 					</div>
 				</div>
+
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="formGroupExampleInput">Telefono</label>
-						<input type="text" class="form-control" name="telephone" value="{{old('telephone',$user->telephone)}}" />
+						<label for="telephone">Telefono</label>
+						<input type="text" class="form-control" name="telephone" id="telephone" value="{{old('telephone',$user->telephone)}}" />
 					</div>
 				</div>
+
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="formGroupExampleInput">Email</label>
-						<input type="text" class="form-control" name="email" value="{{old('email',$user->email)}}" />
+						<label for="email">Email</label>
+						<input type="text" class="form-control" name="email" id="email" value="{{old('email',$user->email)}}" />
 					</div>
 				</div>
 			</div>
+
 			<div class="row">
 
 				<div class="col-md-9">
 					<div class="form-group">
-						<label for="formGroupExampleInput">Acerca de mi</label>
-						<textarea class="form-control" rows="6" cols="6" name="about_me">{{$user->about_me}}</textarea>
+						<label for="about_me">Acerca de mi</label>
+						<textarea class="form-control" rows="6" cols="6" name="about_me" id="about_me">{{$user->about_me}}</textarea>
 					</div>
 				</div>
 
@@ -74,27 +78,21 @@
 
 			<div class="row">
 				<div class="col-md-4">
-					<label for="formGroupExampleInput">Foto</label>
-					<input type="file" name="photo" class="form-control-file" />
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="col-md-3">
-					<div class="form-group">
-						<label for="formGroupExampleInput">Contraseña</label>
-						<input type="password" class="form-control" value="{{old('password',$user->password)}}" />
-					</div>
+					<label for="photo">Foto</label>
+					<input type="file" name="photo" id="photo" class="form-control-file" />
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
-						<label for="formGroupExampleInput">Contraseña nueva</label>
+						<label for="password">Contraseña nueva</label>
 						<input type="password" class="form-control" name="password" minlength="8" value="" />
 					</div>
 				</div>
+
+
+
 			</div>
 			<div class="row">
-				<div class="col-md-2">
+				<div class="col-md-2 offset-10">
 					<button type="submit" class="btn btn-primary">Actualizar</button>
 				</div>
 			</div>
@@ -105,7 +103,7 @@
 				<div class="col-md-6 col-md-offset-5">
 					<div class='alert alert-danger alert-dismissible fade show msgErrorLogin' role='alert'>
 
-						<h6>Por favor corrige los errores debajo:</h6>
+						<h6>Por favor corrige los errores:</h6>
 						<ul>
 							@foreach($errors->all() as $error)
 							<li>{{$error}}</li>
@@ -115,6 +113,8 @@
 				</div>
 			</div>
 			@endif
+
+
 
 		</form>
 	</div>

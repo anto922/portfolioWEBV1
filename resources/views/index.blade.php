@@ -168,10 +168,7 @@
 						<button id="sendEmail" type="button" class="btn btn-primary">Enviar</button>
 					</form>
 
-					<div id="notifMail">
-
-
-					</div>
+					<div id="notifMail"></div>
 				</div>
 
 			</div>

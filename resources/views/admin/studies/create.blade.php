@@ -12,13 +12,13 @@
 		<form method="POST" action="{{url('AdminPanel/StoreStudie')}}" class="needs-validation">
 			{!! csrf_field() !!}
 			<div class="row mt-4">
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Fecha de inicio</label>
 						<input type="date" name="date_start" class="form-control" />
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Fecha de fin</label>
 						<input type="date" name="date_end" class="form-control" />
@@ -47,7 +47,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Escuela</label>
 						<input type="text" class="form-control" name="school" />
@@ -55,7 +55,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-6">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Curso</label>
 						<input type="text" class="form-control" name="course" />

@@ -1,7 +1,5 @@
-@extends('layouts/admin/panel')
-
-@section('title',"Listado Experiencia")	
-
+@extends('layouts/admin/panel') 
+@section('title',"Listado Experiencia") 
 @section('content')
 
 <h1 class="mt-3">{{$titulo}}</h1>
@@ -10,55 +8,55 @@
 
 @if($experience->isNotEmpty())
 <div class="row">
-	<div class="col-md-10 offset-2 mt-5">
-	@if (session('status'))
-    
-		<div class='alert alert-success alert-dismissible fade show' role='alert'>
-        {{ session('status') }}
-		<button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
-		</div>
-		
-   
-@endif
-		<table id="experience-table" class="table table-striped table-bordered" style="width:100%">
-        <thead>
-            <tr>
-                <th>Inicio</th>
-                <th>Fin</th>
-                <th>Empresa</th>
-				<th>Provincia</th>
-				<th>Ciudad</th>
-				<th></th>
-            </tr>
-        </thead>
-			
-        <tbody>
-			
-			
-	@forelse($experience as $exp)
-	   <tr>
-       <td>{{$exp->date_start}}</td>
-       <td>{{$exp->date_end}}</td>
-       <td>{{$exp->company}}</td>
-	   <td>{{$exp->province}}</td>
-	   <td>{{$exp->city}}</td>
-	   <td align="center">	   
-	   <a class="btn btn-warning"  href="{{route('experience.edit',$exp)}}"><span class="oi oi-pencil"></span></a>
-		<button type="button" value="{{$exp->id}}" class="btn btn-danger trash_exp" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>	  
-	   </td>
-       </tr>
-	@empty
-	   <tr>
-       <td>Sin resultados</td>
-              
-       </tr>
-	@endforelse
-			
-	</tbody>
-			
-     </table>
-		</div>
-	</div>
+  <div class="col-md-12 mt-4">
+    @if (session('status'))
+
+    <div class='alert alert-success alert-dismissible fade show' role='alert'>
+      {{ session('status') }}
+      <button type='button' class='close' data-dismiss='alert' aria-label='Close'><span aria-hidden='true'>&times;</span></button>
+    </div>
+
+
+    @endif
+    <table id="experience-table" class="table table-striped table-bordered" style="width:100%">
+      <thead>
+        <tr>
+          <th>Inicio</th>
+          <th>Fin</th>
+          <th>Empresa</th>
+          <th>Provincia</th>
+          <th>Ciudad</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+
+        @forelse($experience as $exp)
+        <tr>
+          <td>{{$exp->date_start}}</td>
+          <td>{{$exp->date_end}}</td>
+          <td>{{$exp->company}}</td>
+          <td>{{$exp->province}}</td>
+          <td>{{$exp->city}}</td>
+          <td align="center">
+            <a class="btn btn-warning" href="{{route('experience.edit',$exp)}}"><span class="oi oi-pencil"></span></a>
+            <button type="button" value="{{$exp->id}}" class="btn btn-danger trash_exp" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>
+          </td>
+        </tr>
+        @empty
+        <tr>
+          <td>Sin resultados</td>
+
+        </tr>
+        @endforelse
+
+      </tbody>
+
+    </table>
+  </div>
+</div>
 
 
 
@@ -81,7 +79,7 @@
       </div>
     </div>
   </div>
-	{!! csrf_field() !!}  
+  {!! csrf_field() !!}
 </div>
 
 
@@ -89,13 +87,12 @@
 
 
 
-	@else
-     <p>No hay registros</p>
-	
+@else
+<p>No hay registros</p>
+
 @endif
-	  
 @endsection
+ 
 @section('script')
 <script src="{{ asset('public/assets/js/admin/experience/experience_index.js') }}" type="text/javascript"></script>
 @endsection
-		

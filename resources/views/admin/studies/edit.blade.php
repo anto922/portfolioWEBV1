@@ -2,20 +2,20 @@
 @section('title',"Alta habilidad") 
 @section('content')
 
-<div class="card mt-5">
+<div class="card">
 	<div class="card-header bg-dark text-white">
-		<span class="oi oi-grid-four-up"></span>&nbsp;&nbsp;Estudio
+		<span class="oi oi-grid-four-up"></span> <b>Editar Formación</b>
 	</div>
 	<div class="card-body">
 		<form method="POST" action="{{url("AdminPanel/Estudios/{$studie->id}")}}" class="needs-validation"> {!! csrf_field() !!} {{method_field('PUT')}}
 			<div class="row mt-4">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Fecha de inicio</label>
 						<input type="date" name="date_start" class="form-control" value="{{old('date_start',$studie->date_start)}}" />
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Fecha de fin</label>
 						<input type="date" name="date_end" class="form-control" value="{{old('date_end',$studie->date_start)}}" />
@@ -24,7 +24,7 @@
 			</div>
 
 			<div class="row mt-4">
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Provincia</label>
 						<select id="province" name="province" class="form-control">
@@ -40,7 +40,7 @@
 					  </select>
 					</div>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-3">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Localidad</label>
 						<select id="city" name="city" class="form-control" readonly="true">
@@ -55,7 +55,7 @@
 			</div>
 
 			<div class="row">
-				<div class="col-md-4">
+				<div class="col-md-6">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Escuela</label>
 						<input type="text" class="form-control" name="school" value="{{old('school',$studie->school)}}" />
@@ -63,7 +63,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-6">
 					<div class="form-group">
 						<label for="formGroupExampleInput">Curso</label>
 						<input type="text" class="form-control" name="course" value="{{old('course',$studie->course)}}" />
