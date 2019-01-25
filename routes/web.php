@@ -17,6 +17,7 @@ Auth::routes();
 
 Route::get('/', 'PortfolioController@index');
 Route::post('/sendMail', 'MailController@send');
+Route::get('/getPDF', 'PdfController@generatePDF');
 
 // FIN PORTFOLIO PRINCIPAL
 
