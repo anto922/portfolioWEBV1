@@ -28,7 +28,7 @@
 		</ul>
 	</nav>
 
-	<div class="container">
+	<div class="container-fluid">
 		<div class="row">
 			<nav class="col-md-2 d-none d-md-block bg-light sidebar">
 				<div class="sidebar-sticky">
@@ -115,11 +115,9 @@
 				</div>
 			</nav>
 
-
+			<main  role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">@yield('content')</main>
 		</div>
-		<div class="row">
-			<div class="col-md-12  mt-4">@yield('content')</div>
-		</div>
+		
 
 
 	</div>
