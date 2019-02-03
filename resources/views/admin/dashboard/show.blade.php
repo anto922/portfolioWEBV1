@@ -37,7 +37,7 @@
 </div>
 @endsection
 
-  @include('admin.cv_pdf.cv_pdf') 
+  @include('admin.pdf.modal_pdf') 
 @section('script')
 <script src="{{ asset('public/assets/js/admin/dashboard/dashboard_show.js') }}" type="text/javascript"></script>
 @endsection
