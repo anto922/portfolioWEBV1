@@ -8,7 +8,7 @@
 	<meta name="author" content="">
 	<title>Panel Administrador</title>
 	<title>@yield('title')</title>
-	<link href="{{ asset('public/assets/css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
 	<link href="{{ asset('public/assets/plugins/datatables/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('public/assets/plugins/iconic/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
 	<link href="{{ asset('public/assets/css/dashboard.css') }}" rel="stylesheet">
@@ -115,17 +115,17 @@
 				</div>
 			</nav>
 
-			<main  role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">@yield('content')</main>
+			<main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">@yield('content')</main>
 		</div>
-		
+
 
 
 	</div>
 
 	<script src="{{ asset('public/assets/plugins/jquery/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('public/assets/plugins/popper/popper.min.js') }}" type="text/javascript"></script>
-	<script src="{{ asset('public/assets/plugins/charts/Chart.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('public/assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
+	<script src="{{ asset('public/assets/plugins/charts/Chart.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('public/assets/plugins/datatables/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 	<script src="{{ asset('public/assets/plugins/datatables/js/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>
 	@yield('script')

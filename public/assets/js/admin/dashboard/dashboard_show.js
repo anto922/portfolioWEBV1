@@ -25,3 +25,14 @@ var myDoughnutChart = new Chart(ctx1, {
 });
 
 
+$("#pdf_cv").click(function () {
+    $('.pdfload').show();
+    setTimeout(function () {
+        $('.pdfload').hide();
+
+    }, 3600);
+
+});
+
+
+

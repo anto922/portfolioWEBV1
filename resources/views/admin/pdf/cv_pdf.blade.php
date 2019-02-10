@@ -19,37 +19,32 @@
             padding-left: 50px
         }
     </style>
+
 </head>
 
 <body>
-    <header class="bg-secondary">
-        <table width="100%">
-            <tr>
-                <td>
-                    <h6><b>{{$user->name}}</b>
-                </td>
-                <td rowspan="6" class="photo">
-                    <img src="{{ asset('storage/app/'.$user->photo) }}" width="150" height="150">
-                </td>
-            </tr>
 
-            <tr>
-                <td>Calle Concepcion Arenal 141, Elche (Alicante) </td>
-            </tr>
-            <tr>
-                <td>Fecha de Nacimiento: 10-04-1992</td>
-            </tr>
-            <tr>
-                <td>Email: {{$user->email}}</td>
-            </tr>
-        </table>
-    </header>
-    <table class="mt-4 ml-4" width="100%" cellpadding="5">
+    <table width="100%" class=" p-4" style="background-color:rgb(192, 192, 192)">
+        <tr>
+            <td>
+                <h6><b>{{$user->name." ".$user->surname}}</b></h6>
+                <h6><b> Fecha de Nacimiento : 10-04-1992</b></h6>
+                <h6><b> Tel : {{$user->telephone}}</b></h6>
+                <h6><b> Email : {{$user->email}}</b></h6>
+            </td>
+            <td class="photo">
+                <img src="{{ asset('storage/app/'.$user->photo) }}" width="150" height="150" />
+            </td>
+        </tr>
+
+    </table>
+
+    <table width="100%" class="mt-4  ml-4 p-4" cellpadding="10">
         <tr>
             <td colspan="2">
-                <div class="alert alert-primary ml-2 pl-4 pr-4">
-                    <h5>Experiencia</h5>
-                </div>
+
+                <h1 class="btn btn-secondary btn-lg">Experiencia</h1>
+
             </td>
         </tr>
         @foreach ($exp as $ex)
@@ -57,37 +52,51 @@
 
         <tr>
             <td style="border-left:10px solid">
-                <h5 class="ml-2">{{$ex->date_start." | ".$ex->date_end}}</h5>
+                @if($ex->date_end!=null)
+                <h5 class="ml-2">{{\Carbon\Carbon::parse($ex->date_start)->format('M Y')}}</h5>
+                <h5 class="ml-2">{{\Carbon\Carbon::parse($ex->date_end)->format('M Y')}}</h5>
+                @else
+                <h5 class="ml-2">Actualmente</h5>
+
+                @endif
             </td>
-            <td align="left">
-                <h6>{{$ex->company}}</h6>
+            <td width="70%">
+                <h6>{{$ex->description}}</h6>
+                <h6><u>{{$ex->company}}</u></h6>
             </td>
         </tr>
         @endforeach
+
+    </table>
+    <table width="100%" class="mt-4  ml-4 p-4" cellpadding="10">
         <tr>
             <td colspan="2">
-                <div class="alert alert-primary mt-4 ml-2 pl-4 pr-4">
-                    <h5>Estudios</h5>
-                </div>
+
+                <h1 class="btn btn-secondary btn-lg">Estudios</h1>
+
             </td>
         </tr>
-        @foreach ($studies as $st)
+        @foreach ($studies as $ex)
 
 
         <tr>
             <td style="border-left:10px solid">
-                <h5 class="ml-2">{{$st->date_start." | ".$st->date_end}}</h5>
+                <h5 class="ml-2">{{\Carbon\Carbon::parse($ex->date_start)->format('M Y')}}</h5>
+                <h5 class="ml-2">{{\Carbon\Carbon::parse($ex->date_end)->format('M Y')}}</h5>
             </td>
-            <td align="left">
-                <h6>{{$st->school}}</h6>
+            <td width="70%">
+                <h6>{{$ex->course}}</h6>
+                <h6><u>{{$ex->school}}</u></h6>
             </td>
         </tr>
         @endforeach
+
+    </table>
+
+    <table class="mt-4  ml-4 p-4" width="100%" cellpadding="10">
         <tr>
             <td colspan="2">
-                <div class="alert alert-primary mt-4 ml-2 pl-4 pr-4">
-                    <h5>Aptitudes generales tecnicas</h5>
-                </div>
+                <h1 class="btn btn-secondary btn-lg">Aptitudes generales tecnicas</h1>
             </td>
         </tr>
 
@@ -98,7 +107,7 @@
                     @foreach ($skills as $sk)
 
 
-                    <li class="text-secondary">
+                    <li>
                         {{$sk->description}}
                     </li>
                     @endforeach
@@ -106,61 +115,63 @@
             </td>
         </tr>
 
+    </table>
 
-
-
+    <table class="mt-4  ml-4 p-4" width="100%" cellpadding="10">
         <tr>
             <td colspan="2">
-                <div class="alert alert-primary mt-4 ml-2 pl-4 pr-4">
-                    <h5>Otras aptitudes</h5>
-                </div>
+                <h1 class="btn btn-secondary btn-lg">Otras aptitudes</h1>
             </td>
         </tr>
 
         <tr>
             <td>
                 <ul>
-                    <li class="text-secondary">
+                    <li>
                         Organizado y metodico
                     </li>
-                    <li class="text-secondary">
+                    <li>
                         Dinamico
                     </li>
-                    <li class="text-secondary">
+                    <li>
                         Capacidad de trabajo en equipo
                     </li>
 
                 </ul>
             </td>
         </tr>
-        <br>
+    </table>
+
+    <table class="mt-4  ml-4 p-4" width="100%" cellpadding="10">
         <tr>
             <td colspan="2">
-                <div class="alert alert-primary mt-4 ml-2 pl-4 pr-4">
-                    <h5>Otras datos de interes</h5>
-                </div>
+
+
+                <h1 class="btn btn-secondary btn-lg">Otras datos de interes</h1>
+
             </td>
         </tr>
 
         <tr>
             <td>
                 <ul>
-                    <li class="text-secondary">
+                    <li>
                         Carnet de conducir y vehiculo propio
                     </li>
-                    <li class="text-secondary">
+                    <li>
                         Total disponibilidad para viajar y desplazamiento
                     </li>
                 </ul>
             </td>
         </tr>
+
     </table>
 
 
 
 
 
-
 </body>
+
 
 </html>

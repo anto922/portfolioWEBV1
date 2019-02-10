@@ -13,17 +13,14 @@
     <div class="col-md-12">
 
       <div class="card mt-3">
-        <div class="card-header bg-dark text-white"><b>Dashboard</b> <a href="javascript:void(0)" data-toggle="modal" data-target="#cv_pdf" data-whatever="@mdo" class="btn btn-danger float-right"><span class="oi oi-document"></span> Exportar CV</a></div>
+        <div class="card-header bg-dark text-white"><b>Dashboard</b> <a id="pdf_cv" data-toggle="modal" data-target="#cv_pdf" data-whatever="@mdo" class="btn btn-danger float-right"><span class="oi oi-document"></span> Exportar CV</a></div>
         <div class="card-body">
           <h5 class="card-title"></h5>
           <p class="card-text">
             <div class="row">
               <div class="col-md-6">
-
-
                 <h5> <span class="badge badge-info">Antonio Ruiz Aznar</span></h5>
                 <h5> <span class="badge badge-warning">Full-Stack Web Developer</span></h5>
-
               </div>
               <div class="col-md-6">
                 <canvas id="myChart"></canvas>

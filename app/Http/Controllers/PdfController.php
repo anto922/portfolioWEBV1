@@ -15,9 +15,9 @@ class PdfController extends Controller
     {
 
         $user = Administrator::find(1);
-        $studies = Studies::all();
+        $studies = Studies::all()->sortByDesc("date_start");
         $skills = skills::all();
-        $exp = Experience::all();
+        $exp = Experience::all()->sortByDesc("date_start");
         $works = works::join('skills', 'works.id_skill', '=', 'skills.id')->select('works.*', 'skills.description as skill_description')->get();
 
         $pdf = \PDF::loadView('admin.pdf.cv_pdf', compact('user', 'studies', 'skills', 'exp', 'works'));
