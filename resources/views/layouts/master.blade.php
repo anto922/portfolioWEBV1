@@ -9,7 +9,7 @@
     <link href="{{ asset('public/assets/css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('public/assets/plugins/datatables/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
     <link href="{{ asset('public/assets/plugins/iconic/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('public/assets/plugins/aos/aos.css') }}" rel="stylesheet">
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href="{{ asset('public/assets/plugins/iconic/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('public/assets/css/estilos.css') }}" rel="stylesheet">
 </head>
@@ -23,8 +23,7 @@
                 <div class="col-md-12">
                     <img src="{{ asset('storage/app/'.$user->photo) }}" class="img-fluid rounded-circle" alt="Foto Antonio">
                     <h2>Antonio Ruiz Aznar</h2>
-                    <h3 class="mt-4 mb-4 font-weight-light">Full Stack Web Developer</h3>
-                    <h3>____________________________________________</h3>
+                    <h3 class="mt-4 mb-4 font-weight-light border-bottom">Full Stack Web Developer</h3>
                     <p class="mt-4 text-white text-justify lead">{{$user->about_me}}</p>
                 </div>
 
@@ -59,7 +58,7 @@
                                 </button>
 
                         <div class="navbar-collapse collapse" id="navbarSupportedContent" style="">
-                            <ul class="navbar-nav mr-auto">
+                            <ul id="myNav" class="navbar-nav mr-auto">
                                 <li class="nav-item">
                                     <a class="nav-link text-secondary" href="{{url('/')}}">Home</a>
                                 </li>
@@ -71,6 +70,9 @@
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-secondary" href="#contacto">Contacto</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-secondary" href="#portfolio">Portfolio</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-secondary" href="javascript:void(0)" data-toggle="modal" data-target="#loginAdmin" data-whatever="@mdo">Admin</a>
@@ -108,10 +110,12 @@
         </footer>
     </div>
 
+
+    <a href="javascript:void(0)" id="scroll" style="display:none"><span></span></a>
+
     <script src="{{ asset('public/assets/plugins/jquery/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/assets/plugins/popper/popper.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('public/assets/plugins/jquery-knob/jquery.knob.min.js') }}" type="text/javascript"></script>
-    <script src="{{ asset('public/assets/plugins/aos/aos.js') }}" type="text/javascript"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js" type="text/javascript"></script>
     <script src="{{ asset('public/assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/assets/plugins/datatables/js/jquery.dataTables.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/assets/plugins/datatables/js/dataTables.bootstrap4.min.js') }}" type="text/javascript"></script>

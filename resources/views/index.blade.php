@@ -5,10 +5,10 @@
 
 <div class="container">
 
-	<div class="row mt-4 pt-4">
+	<div class="row mt-4 pt-4" data-aos="fade-down">
 		<div class="col-md-12">
 
-			<div class="card" name="experiencia">
+			<div id="experiencia" class="card">
 				<div class="card-body">
 					<h2 class="card-title text-center">Experiencia</h2>
 					<p class="card-text">
@@ -32,10 +32,10 @@
 	</div>
 
 
-	<div class="row mt-4">
+	<div class="row mt-4" data-aos="fade-down">
 		<div class="col-md-12">
 
-			<div class="card">
+			<div id="formacion" class="card">
 				<div class="card-body">
 					<h2 class="card-title text-center">Formación</h2>
 					<p class="card-text">
@@ -62,10 +62,10 @@
 
 	</div>
 
-	<div class="row mt-5">
+	<div class="row mt-5" data-aos="fade-down">
 		<div class="col-md-12">
 
-			<div class="card">
+			<div id="habilidades" class="card">
 				<div class="card-body">
 					<h2 class="card-title text-center">Habilidades</h2>
 					<p class="card-text mt-3">
@@ -92,16 +92,13 @@
 
 	</div>
 
-	<div class="row mt-4">
+	<div class="row mt-4" data-aos="fade-down">
 		<div class="col-md-12">
-			@foreach ($works as $work)
-
-
-
-			<div class="card">
-				<div class="card-body">
+			<div id="trabajos" class="card">
+				<div id="portfolio" class="card-body">
 					<h2 class="card-title text-center">Portfolio</h2>
 					<p class="card-text">
+						@foreach ($works as $work)
 						<div class="card" style="width: 15rem;">
 							<img class="card-img-top" src="{{ asset('storage/app/'.$work->icon_work) }}" alt="Card image cap" width="286" height="180">
 							<div class="card-body text-center">
@@ -110,6 +107,7 @@
 								<a target="_blank" href="{{$work->link}}" class="btn btn-primary">Ir a web</a>
 							</div>
 						</div>
+						@endforeach
 					</p>
 
 				</div>
@@ -117,44 +115,45 @@
 
 
 
-				@endforeach
+
 			</div>
 		</div>
 	</div>
 
-	<div class="row mt-5">
+	<div class="row mt-5" data-aos="fade-down">
 		<div class="col-md-12">
 
-			<div class="card">
+			<div id="contacto" class="card">
 				<div class="card-body">
 					<h2 class="card-title text-center">Contacto</h2>
 					<p class="card-text">
 						<form id="mail-form">
 							{!! csrf_field() !!}
 							<div class="form-row">
-								<div class="form-group col-md-6 offset-3">
+								<div class="form-group col-md-6 offset-md-3">
 									<label for="name">Nombre</label>
 									<input type="text" class="form-control" id="name">
 
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="form-group col-md-6 offset-3">
+								<div class="form-group col-md-6 offset-md-3">
 									<label for="emailContact">Email</label>
 									<input type="emailContact" class="form-control" id="emailContact">
 
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="form-group col-md-6 offset-3">
+								<div class="form-group col-md-6 offset-md-3">
 									<label for="subject">Asunto</label>
 									<input type="text" class="form-control" id="subject">
 								</div>
 							</div>
 							<div class="form-row">
-								<div class="form-group col-md-6 offset-3">
+								<div class="form-group col-md-6 offset-md-3">
 									<label for="mensaje">Mensaje</label>
-									<textarea id="msg" class="form-control" cols="30" rows="10"></textarea>
+									<textarea id="msg" class="form-control d-none d-sm-block" cols="30" rows="10"></textarea>
+									<textarea id="msg" class="form-control d-md-none" cols="30" rows="5"></textarea>
 									<br>
 									<button id="sendEmail" type="button" class="btn btn-primary">Enviar</button>
 								</div>

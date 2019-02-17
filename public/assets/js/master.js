@@ -1,7 +1,29 @@
 /// master js ///
 
+$(window).scroll(function () {
+	if ($(this).scrollTop() > 100) {
+		$('#scroll').fadeIn();
+	} else {
+		$('#scroll').fadeOut();
+	}
+});
+$('#scroll').click(function () {
+	$("html, body").animate({ scrollTop: 0 }, 600);
+	return false;
+});
+
+$('a').click(function () {
+	$('html, body').animate({
+		scrollTop: $($(this).attr('href')).offset().top
+	}, 500);
+	return false;
+});
+
 // / Login Panel administrador
 $(document).ready(function () {
+
+
+	AOS.init();
 
 	// Accion Login boton
 	$("#loginButton").click(function () {
@@ -95,25 +117,6 @@ $(document).ready(function () {
 				'</div>');
 		}
 	});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
