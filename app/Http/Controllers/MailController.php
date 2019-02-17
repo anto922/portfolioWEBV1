@@ -9,16 +9,14 @@ class MailController extends Controller
 {
     public function send(Request $request)
     {
+
+        $data = array('name' => $request->name, 'email' => $request->email, 'subject' => $request->subject, 'msg' => $request->msg);
+
         try {
 
-            Mail::raw('Nombre: ' . $request->name . '
-                   Email: ' . $request->email . ''
-
-                . $request->msg, function ($message) use ($request) {
-
-                    $message->to('antoniora48@gmail.com', 'Antonio Ruiz Aznar')->subject($request->subject);
-
-                });
+            Mail::send('email.messageContact', $data, function ($message) use ($request) {
+                $message->to('antoniora48@gmail.com', 'Antonio Ruiz Aznar')->subject($request->subject);
+            });
             return "0";
 
         } catch (\Exception $e) {
