@@ -12,9 +12,9 @@ $('#scroll').click(function () {
 	return false;
 });
 
-$('a').click(function () {
+$('#myNav a').click(function () {
 	$('html, body').animate({
-		scrollTop: $($(this).attr('href')).offset().top
+		scrollTop: $(this).offset().top
 	}, 500);
 	return false;
 });
@@ -119,6 +119,13 @@ $(document).ready(function () {
 	});
 
 
+	$("#pdf_cv").click(function () {
+		$('.pdfload').show();
+		setTimeout(function () {
+			$('.pdfload').hide();
 
+		}, 3600);
+
+	});
 
 });

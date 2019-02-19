@@ -25,6 +25,7 @@
                     <h2>Antonio Ruiz Aznar</h2>
                     <h3 class="mt-4 mb-4 font-weight-light border-bottom">Full Stack Web Developer</h3>
                     <p class="mt-4 text-white text-justify lead">{{$user->about_me}}</p>
+                    <a href="" id="pdf_cv" data-toggle="modal" data-target="#cv_pdf" data-whatever="@mdo" class="btn btn-info"><span class="oi oi-document"></span> Descargar CV</a>
                 </div>
 
             </div>
@@ -112,6 +113,7 @@
 
 
     <a href="javascript:void(0)" id="scroll" style="display:none"><span></span></a>
+    @include('admin.pdf.modal_pdf')
 
     <script src="{{ asset('public/assets/plugins/jquery/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/assets/plugins/popper/popper.min.js') }}" type="text/javascript"></script>
