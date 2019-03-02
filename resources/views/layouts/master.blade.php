@@ -24,8 +24,6 @@
                     <img src="{{ asset('storage/app/'.$user->photo) }}" class="img-fluid rounded-circle" alt="Foto Antonio">
                     <h2>Antonio Ruiz Aznar</h2>
                     <h3 class="mt-4 mb-4 font-weight-light border-bottom">Full Stack Web Developer</h3>
-                    <p class="mt-4 text-white text-justify lead">{{$user->about_me}}</p>
-                    <a href="" id="pdf_cv" data-toggle="modal" data-target="#cv_pdf" data-whatever="@mdo" class="btn btn-info"><span class="oi oi-document"></span> Descargar CV</a>
                 </div>
 
             </div>
@@ -64,16 +62,19 @@
                                     <a class="nav-link text-secondary" href="{{url('/')}}">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-secondary" href="#formacion">Formación</a>
-                                </li>
-                                <li class="nav-item">
                                     <a class="nav-link text-secondary" href="#experiencia">Experiencia</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-secondary" href="#contacto">Contacto</a>
+                                    <a class="nav-link text-secondary" href="#formacion">Formación</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-secondary" href="#habilidades">Habilidades</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-secondary" href="#portfolio">Portfolio</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-secondary" href="#contacto">Contacto</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-secondary" href="javascript:void(0)" data-toggle="modal" data-target="#loginAdmin" data-whatever="@mdo">Admin</a>

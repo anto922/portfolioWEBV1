@@ -2,9 +2,8 @@
 @section('title',"Listado Estudios") 
 @section('content')
 
-<h1 class="mt-3">{{$titulo}}</h1>
-
-@if (session('status'))
+<h1 class="display-6">{{$titulo}}</h1>
+<br> @if (session('status'))
 
 <div class="row">
   <div class="col-md-12 mt-4">
@@ -93,8 +92,10 @@
 
 
 
+
 </div>
 </div>
+
 
 
 

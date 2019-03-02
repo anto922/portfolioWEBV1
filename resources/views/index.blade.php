@@ -5,12 +5,39 @@
 
 <div class="container">
 
-	<div class="row mt-4 pt-4" data-aos="fade-down">
+	<div class="row mt-4 pt-4" data-aos="fade-left">
 		<div class="col-md-12">
 
 			<div id="experiencia" class="card">
 				<div class="card-body">
-					<h2 class="card-title text-center">Experiencia</h2>
+
+					<p class="card-text lead text-justify">
+						{{$user->about_me}}
+					</p>
+
+				</div>
+				<div class="card-footer text-muted text-center">
+					<a href="" id="pdf_cv" data-toggle="modal" data-target="#cv_pdf" data-whatever="@mdo" class="btn btn-info"><span class="oi oi-document"></span> Descargar CV</a>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+
+
+	<div class="row mt-4 pt-4" data-aos="fade-left">
+		<div class="col-md-12">
+
+			<div id="experiencia" class="card">
+				<div class="card-body">
+					<h2 class="card-title text-center"><span class="oi oi-briefcase"></span> Experiencia</h2>
 					<p class="card-text">
 						<ul class="timeline">
 							@foreach($exp as $ex)
@@ -31,13 +58,17 @@
 		</div>
 	</div>
 
+	<br>
+	<br>
+	<br>
+	<br>
 
-	<div class="row mt-4" data-aos="fade-down">
+	<div class="row mt-4" data-aos="fade-right">
 		<div class="col-md-12">
 
 			<div id="formacion" class="card">
 				<div class="card-body">
-					<h2 class="card-title text-center">Formación</h2>
+					<h2 class="card-title text-center"><span class="oi oi-book"></span> Formación</h2>
 					<p class="card-text">
 						<ul class="timeline">
 
@@ -62,22 +93,30 @@
 
 	</div>
 
-	<div class="row mt-5" data-aos="fade-down">
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div class="row mt-5" data-aos="fade-left">
 		<div class="col-md-12">
 
 			<div id="habilidades" class="card">
 				<div class="card-body">
-					<h2 class="card-title text-center">Habilidades</h2>
+					<h2 class="card-title text-center"><span class="oi oi-cog"></span> Habilidades</h2>
+					<br>
 					<p class="card-text mt-3">
 
 						@foreach ($skills as $skill)
-						<div class="col-md-6 mx-auto">
-							<span>{{$skill->description}} <span class="float-right">{{$skill->level}}%</span></span>
+						<div class="col-md-6 mx-auto mt-2" data-toggle="popover" data-placement="left" data-trigger="hover" data-content="{{$skill->description}}">
 
-							<div class="progress" style="height:5px">
 
+							<div class="progress" style="height:32px">
+								<img src="{{ asset('storage/app/'.$skill->icon_skill) }}" width="32" height="32" />
 								<div class="progress-bar bg-info" role="progressbar" style="width: {{$skill->level}}%;" aria-valuenow="{{$skill->level}}"
-								 aria-valuemin="0" aria-valuemax="100"></div>
+								 aria-valuemin="0" aria-valuemax="100">
+									<b>{{$skill->level}} %</b>
+								</div>
 							</div>
 
 						</div>
@@ -92,22 +131,32 @@
 
 	</div>
 
-	<div class="row mt-4" data-aos="fade-down">
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div class="row mt-5" data-aos="fade-right">
 		<div class="col-md-12">
-			<div id="trabajos" class="card">
-				<div id="portfolio" class="card-body">
-					<h2 class="card-title text-center">Portfolio</h2>
+			<div id="portfolio" class="card">
+				<div class="card-body">
+					<h2 class="card-title text-center"><span class="oi oi-folder"></span> Portfolio</h2>
 					<p class="card-text">
-						@foreach ($works as $work)
-						<div class="card" style="width: 15rem;">
-							<img class="card-img-top" src="{{ asset('storage/app/'.$work->icon_work) }}" alt="Card image cap" width="286" height="180">
-							<div class="card-body text-center">
-								<h5 class="card-title">{{$work->description}}</h5>
-								<p><span class="badge badge-success">{{$work->skill_description}}</span></p>
-								<a target="_blank" href="{{$work->link}}" class="btn btn-primary">Ir a web</a>
+
+						<div class="row">
+							@foreach ($works as $work)
+							<div class="col-md-3">
+								<div class="card" style="width: 15rem;">
+									<img class="card-img-top" src="{{ asset('storage/app/'.$work->icon_work) }}" alt="Card image cap" width="286" height="180">
+									<div class="card-body text-center">
+										<h5 class="card-title">{{$work->description}}</h5>
+										<p><span class="badge badge-success">{{$work->skill_description}}</span></p>
+										<a target="_blank" href="{{$work->link}}" class="btn btn-primary">Ir a web</a>
+									</div>
+								</div>
 							</div>
+							@endforeach
 						</div>
-						@endforeach
 					</p>
 
 				</div>
@@ -120,12 +169,17 @@
 		</div>
 	</div>
 
-	<div class="row mt-5" data-aos="fade-down">
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div class="row mt-5" data-aos="fade-left">
 		<div class="col-md-12">
 
 			<div id="contacto" class="card">
 				<div class="card-body">
-					<h2 class="card-title text-center">Contacto</h2>
+					<h2 class="card-title text-center"><span class="oi oi-map-marker"></span> Contacto</h2>
 					<p class="card-text">
 						<form id="mail-form">
 							{!! csrf_field() !!}
@@ -155,7 +209,7 @@
 									<textarea id="msg" class="form-control d-none d-sm-block" cols="30" rows="10"></textarea>
 									<textarea id="msg" class="form-control d-md-none" cols="30" rows="5"></textarea>
 									<br>
-									<button id="sendEmail" type="button" class="btn btn-primary">Enviar</button>
+									<button id="sendEmail" type="button" class="btn btn-info">Enviar</button>
 								</div>
 							</div>
 

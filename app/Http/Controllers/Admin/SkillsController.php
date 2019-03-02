@@ -77,7 +77,7 @@ class SkillsController extends Controller
 
         $request->hasFile('icon_skill') ? $ruta = $request->file('icon_skill')->store('public') : $ruta = $skill->icon_skill;
 
-        if ($request->hasFile('icon_work') == true) {
+        if ($request->hasFile('icon_skill') == true) {
             $skill->whereId($skill->id)->update([
                 'description' => $datos["description"],
                 'level' => $datos["level"],

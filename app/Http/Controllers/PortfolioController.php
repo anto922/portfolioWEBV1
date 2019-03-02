@@ -14,9 +14,9 @@ class PortfolioController extends Controller
     {
 
         $user = Administrator::find(1);
-        $studies = Studies::all();
+        $studies = Studies::orderby('date_start', 'DESC')->get();
         $skills = skills::all();
-        $exp = Experience::all();
+        $exp = Experience::orderby('date_start', 'DESC')->get();
         $works = works::join('skills', 'works.id_skill', '=', 'skills.id')->select('works.*', 'skills.description as skill_description')->get();
 
         return view('index', compact('user', 'studies', 'skills', 'exp', 'works'));
