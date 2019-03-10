@@ -1,5 +1,5 @@
 @extends('layouts.master') 
-@section('title',"PortFolioWeb") 
+@section('title',"antonioruizcv") 
 @section('content')
 
 
@@ -228,5 +228,5 @@
 
 </div>
 @endsection
-
-	@include('admin.login.login')
+ {{--
+	@include('admin.login.login') --}}

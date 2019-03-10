@@ -15,8 +15,6 @@
 </head>
 
 <body class="bg-light">
-
-
     <header class="pt-4 bg-darkV2">
         <div class="container">
             <div class="row text-white text-center">
@@ -115,6 +113,7 @@
 
     <a href="javascript:void(0)" id="scroll" style="display:none"><span></span></a>
     @include('admin.pdf.modal_pdf')
+    @include('admin.login.login')
 
     <script src="{{ asset('public/assets/plugins/jquery/jquery-3.3.1.min.js') }}" type="text/javascript"></script>
     <script src="{{ asset('public/assets/plugins/popper/popper.min.js') }}" type="text/javascript"></script>

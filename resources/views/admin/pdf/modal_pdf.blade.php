@@ -21,6 +21,4 @@
             <div class="container errorLogin" style='display:none'></div>
         </div>
     </div>
-    <!DOCTYPE html>
-
 </div>
