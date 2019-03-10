@@ -228,5 +228,3 @@
 
 </div>
 @endsection
- {{--
-	@include('admin.login.login') --}}
