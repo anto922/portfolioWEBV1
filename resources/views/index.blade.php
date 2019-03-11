@@ -144,18 +144,43 @@
 					<p class="card-text">
 
 						<div class="row">
-							@foreach ($works as $work)
-							<div class="col-md-3">
-								<div class="card" style="width: 15rem;">
-									<img class="card-img-top" src="{{ asset('storage/app/'.$work->icon_work) }}" alt="Card image cap" width="286" height="180">
-									<div class="card-body text-center">
-										<h5 class="card-title">{{$work->description}}</h5>
-										<p><span class="badge badge-success">{{$work->skill_description}}</span></p>
-										<a target="_blank" href="{{$work->link}}" class="btn btn-primary">Ir a web</a>
-									</div>
+
+							<div class="col-md-6 mx-auto">
+							<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+  @for ($i = 0; $i < count($works); $i++)
+  @if ($i==0)
+        <li data-target="#myCarousel" data-slide-to="{{$i}}" class="active"></li>
+		@else
+		<li data-target="#myCarousel" data-slide-to="{{$i}}"></li>
+		@endif
+@endfor
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+                          @foreach ($works as $key =>$work)
+							
+							@if ($key==0) 
+							<div class="carousel-item active"> 
+							@else
+							<div class="carousel-item">
+							@endif
+								<img  style="width:1200px;height:400px" class="d-block w-100" src="{{ asset('storage/app/'.$work->icon_work) }}" alt="Third slide">
+								<div class="carousel-caption d-none d-md-block">
+								<h5><a class="card-link text-white" href="{{$work->link}}" target="_blank">{{$work->description}}</a></h5>
+								<p><span class="badge badge-warning">{{$work->skill_description}}</span></p>
+							   </div>
 								</div>
+							
+							@endforeach 
+
 							</div>
-							@endforeach
+</div>
+								
+							</div>
+
 						</div>
 					</p>
 
