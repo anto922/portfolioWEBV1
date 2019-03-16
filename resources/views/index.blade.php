@@ -17,7 +17,8 @@
 
 				</div>
 				<div class="card-footer text-muted text-center">
-					<a href="" id="pdf_cv" data-toggle="modal" data-target="#cv_pdf" data-whatever="@mdo" class="btn btn-info"><span class="oi oi-document"></span> Descargar CV</a>
+					<a href="" id="pdf_cv" data-toggle="modal" data-target="#cv_pdf" data-whatever="@mdo" class="btn btn-info d-none d-sm-inline"><span class="oi oi-document"></span> Descargar CV</a>
+					<a href="{{url('/downloadPDF')}}" class="btn btn-info d-md-none"><span class="oi oi-document"></span> Descargar CV</a>
 				</div>
 
 			</div>
@@ -146,110 +147,115 @@
 						<div class="row">
 
 							<div class="col-md-6 mx-auto">
-							<div id="myCarousel" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-  @for ($i = 0; $i < count($works); $i++)
-  @if ($i==0)
-        <li data-target="#myCarousel" data-slide-to="{{$i}}" class="active"></li>
-		@else
-		<li data-target="#myCarousel" data-slide-to="{{$i}}"></li>
-		@endif
-@endfor
-  </ol>
+								<div id="CarouselWorks" class="carousel slide" data-ride="carousel">
+									<!-- Indicators -->
+									<ol class="carousel-indicators">
+										@for ($i = 0; $i
+										< count($works); $i++) @if ($i==0) <li data-target="#myCarousel" data-slide-to="{{$i}}" class="active">
+											</li>
+											@else
+											<li data-target="#myCarousel" data-slide-to="{{$i}}"></li>
+											@endif @endfor
+									</ol>
 
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner">
-                          @foreach ($works as $key =>$work)
-							
-							@if ($key==0) 
-							<div class="carousel-item active"> 
-							@else
-							<div class="carousel-item">
-							@endif
-								<img  style="width:1200px;height:400px" class="d-block w-100" src="{{ asset('storage/app/'.$work->icon_work) }}" alt="Third slide">
-								<div class="carousel-caption d-none d-md-block">
-								<h5><a class="card-link text-white" href="{{$work->link}}" target="_blank">{{$work->description}}</a></h5>
-								<p><span class="badge badge-warning">{{$work->skill_description}}</span></p>
-							   </div>
+									<!-- Wrapper for slides -->
+									<div class="carousel-inner">
+										@foreach ($works as $key =>$work) @if ($key==0)
+										<div class="carousel-item active">
+											@else
+											<div class="carousel-item">
+												@endif
+												<img style="width:800px;height:400px" class="d-block w-100" src="{{ asset('storage/app/'.$work->icon_work) }}" alt="Third slide">
+												<div class="carousel-caption d-none d-md-block">
+													<h5><a class="card-link text-info" href="{{$work->link}}" target="_blank">{{$work->description}}</a></h5>
+													<p><span class="badge badge-warning">{{$work->skill_description}}</span></p>
+												</div>
+											</div>
+
+											@endforeach
+
+										</div>
+										<a class="carousel-control-prev" href="#CarouselWorks" role="button" data-slide="prev">
+											<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+											<span class="sr-only">Previous</span>
+										</a>
+										<a class="carousel-control-next" href="#CarouselWorks" role="button" data-slide="next">
+											<span class="carousel-control-next-icon" aria-hidden="true"></span>
+											<span class="sr-only">Next</span>
+										</a>
+									</div>
+
 								</div>
-							
-							@endforeach 
 
 							</div>
-</div>
-								
-							</div>
-
-						</div>
 					</p>
 
-				</div>
+					</div>
 
 
 
 
-
-			</div>
-		</div>
-	</div>
-
-	<br>
-	<br>
-	<br>
-	<br>
-
-	<div class="row mt-5" data-aos="fade-left">
-		<div class="col-md-12">
-
-			<div id="contacto" class="card">
-				<div class="card-body">
-					<h2 class="card-title text-center"><span class="oi oi-map-marker"></span> Contacto</h2>
-					<p class="card-text">
-						<form id="mail-form">
-							{!! csrf_field() !!}
-							<div class="form-row">
-								<div class="form-group col-md-6 offset-md-3">
-									<label for="name">Nombre</label>
-									<input type="text" class="form-control" id="name">
-
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col-md-6 offset-md-3">
-									<label for="emailContact">Email</label>
-									<input type="emailContact" class="form-control" id="emailContact">
-
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col-md-6 offset-md-3">
-									<label for="subject">Asunto</label>
-									<input type="text" class="form-control" id="subject">
-								</div>
-							</div>
-							<div class="form-row">
-								<div class="form-group col-md-6 offset-md-3">
-									<label for="mensaje">Mensaje</label>
-									<textarea id="msg" class="form-control d-none d-sm-block" cols="30" rows="10"></textarea>
-									<textarea id="msg" class="form-control d-md-none" cols="30" rows="5"></textarea>
-									<br>
-									<button id="sendEmail" type="button" class="btn btn-info">Enviar</button>
-								</div>
-							</div>
-
-
-						</form>
-
-						<div id="notifMail"></div>
-					</p>
 
 				</div>
 			</div>
+		</div>
+
+		<br>
+		<br>
+		<br>
+		<br>
+
+		<div class="row mt-5" data-aos="fade-left">
+			<div class="col-md-12">
+
+				<div id="contacto" class="card">
+					<div class="card-body">
+						<h2 class="card-title text-center"><span class="oi oi-map-marker"></span> Contacto</h2>
+						<p class="card-text">
+							<form id="mail-form">
+								{!! csrf_field() !!}
+								<div class="form-row">
+									<div class="form-group col-md-6 offset-md-3">
+										<label for="name">Nombre</label>
+										<input type="text" class="form-control" id="name">
+
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6 offset-md-3">
+										<label for="emailContact">Email</label>
+										<input type="emailContact" class="form-control" id="emailContact">
+
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6 offset-md-3">
+										<label for="subject">Asunto</label>
+										<input type="text" class="form-control" id="subject">
+									</div>
+								</div>
+								<div class="form-row">
+									<div class="form-group col-md-6 offset-md-3">
+										<label for="mensaje">Mensaje</label>
+										<textarea id="msg" class="form-control d-none d-sm-block" cols="30" rows="10"></textarea>
+										<textarea id="msg" class="form-control d-md-none" cols="30" rows="5"></textarea>
+										<br>
+										<button id="sendEmail" type="button" class="btn btn-info">Enviar</button>
+									</div>
+								</div>
+
+
+							</form>
+
+							<div id="notifMail"></div>
+						</p>
+
+					</div>
+				</div>
+
+			</div>
 
 		</div>
 
 	</div>
-
-</div>
 @endsection
