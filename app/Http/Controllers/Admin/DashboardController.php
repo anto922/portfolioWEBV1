@@ -19,8 +19,9 @@ class DashboardController extends Controller
         $skills = skills::all()->count();
         $exp = Experience::all()->count();
         $works = works::all()->count();
+        $skills_levels = skills::select('skills.level', 'skills.description')->get();
 
-        return view('admin.dashboard.show', compact('user', 'studies', 'skills', 'exp', 'works'));
+        return view('admin.dashboard.show', compact('user', 'studies', 'skills', 'exp', 'works', 'skills_levels'));
 
     }
 }

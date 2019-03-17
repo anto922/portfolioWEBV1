@@ -10,16 +10,59 @@
 <input type="hidden" id="skills" value="{{$skills}}" />
 <input type="hidden" id="exp" value="{{$exp}}" />
 <input type="hidden" id="studies" value="{{$studies}}" />
+<input type="hidden" id="skills_levels" value="{{$skills_levels}}" />
 
-<div class="row">
-  <div class="col-md-3 mt-4">
+<div class="row mt-4">
+  <div class="col-sm-3">
+    <a class="card-link text-dark" href="{{url('/AdminPanel/Experiencia')}}">
+      <div class="card bg-light">
+        <div class="card-body">
+          <h5 class="card-title text-center">Experiencia</h5>
+          <p class="card-text text-center text-primary display-4"><span class="oi oi-briefcase"></span>&nbsp;&nbsp;{{$exp}}</p>
 
-    <h5> <span class="badge badge-info">Antonio Ruiz Aznar</span></h5>
-    <h5> <span class="badge badge-warning">Full-Stack Web Developer</span></h5>
+        </div>
+    </a>
+    </div>
   </div>
-  <div class="col-md-6">
-    <canvas id="myChart"></canvas>
+  <div class="col-sm-3">
+    <a class="card-link text-dark" href="{{url('AdminPanel/Habilidades')}}">
+      <div class="card bg-light">
+        <div class="card-body">
+          <h5 class="card-title text-center">Habilidades</h5>
+          <p class="card-text text-center text-warning display-4"><span class="oi oi-brush"></span>&nbsp;&nbsp;{{$skills}}</p>
+
+        </div>
+    </a>
+    </div>
   </div>
+  <div class="col-sm-3">
+    <a class="card-link text-dark" href="{{url('/AdminPanel/Estudios')}}">
+      <div class="card bg-light">
+        <div class="card-body">
+          <h5 class="card-title text-center">Formación</h5>
+          <p class="card-text text-center text-danger display-4"><span class="oi oi-book"></span>&nbsp;&nbsp;{{$studies}}</p>
+
+        </div>
+    </a>
+    </div>
+  </div>
+  <div class="col-sm-3">
+    <a class="card-link text-dark" href="{{url('/AdminPanel/Trabajos')}}">
+      <div class="card bg-light">
+        <div class="card-body">
+          <h5 class="card-title text-center">Trabajos</h5>
+          <p class="card-text text-center text-success display-4"><span class="oi oi-folder"></span>&nbsp;&nbsp;{{$works}}</p>
+
+        </div>
+    </a>
+    </div>
+  </div>
+</div>
+<div class="row mt-4">
+  <div class="col-md-10 mx-auto">
+    <canvas id="ChartSkills"></canvas>
+  </div>
+
 </div>
 @endsection
  

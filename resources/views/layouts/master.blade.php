@@ -12,6 +12,7 @@
     <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
     <link href="{{ asset('public/assets/plugins/iconic/css/open-iconic-bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('public/assets/css/estilos.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ asset('public/favicon.ico') }}">
 </head>
 
 <body class="bg-light">
