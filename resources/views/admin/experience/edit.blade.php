@@ -70,7 +70,7 @@
 
 	<div class="row">
 		<div class="col-md-2">
-			<button type="submit" class="btn btn-primary">Actualizar</button>
+			<button type="submit" class="btn btn-info">Actualizar</button>
 		</div>
 	</div>
 

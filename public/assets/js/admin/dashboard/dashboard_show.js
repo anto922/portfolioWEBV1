@@ -8,10 +8,12 @@ var countSkills = $("#skills").val();
 var countStudies = $("#studies").val();
 var countExp = $("#exp").val();
 var skills_levels = $("#skills_levels").val();
+
 var data = JSON.parse(skills_levels);
-console.log(data[0].description);
+
 var etiquetas = new Array();
 var niveles = new Array();
+
 data.forEach(function (valor, indice, array) {
 
     etiquetas.push(valor.description);

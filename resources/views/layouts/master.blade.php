@@ -76,7 +76,8 @@
                                     <a class="nav-link text-secondary" href="#contacto">Contacto</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-secondary" href="javascript:void(0)" data-toggle="modal" data-target="#loginAdmin" data-whatever="@mdo">Admin</a>
+                                    <a class="nav-link text-secondary d-none d-sm-block" href="javascript:void(0)" data-toggle="modal" data-target="#loginAdmin"
+                                        data-whatever="@mdo">Admin</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link text-secondary" target="_blank" href="{{url('https://www.linkedin.com/in/antonio-ruiz-aznar-a7688a108/')}}"><img src="{{ asset('storage/app/public/icon_linkedin.png') }}"/></a>

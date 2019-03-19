@@ -50,7 +50,7 @@
 
 	<div class="row">
 		<div class="col-md-2">
-			<button type="submit" class="btn btn-primary">Guardar</button>
+			<button type="submit" class="btn btn-info">Guardar</button>
 		</div>
 	</div>
 

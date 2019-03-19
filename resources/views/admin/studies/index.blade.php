@@ -19,7 +19,7 @@
 
 
     <table id="studies_table" class="table table-striped table-bordered" style="width:100%">
-      <thead class="thead">
+      <thead>
         <tr>
           <th>Curso</th>
           <th>Inicio</th>
@@ -43,8 +43,8 @@
           <td>{{$studie->province}}</td>
           <td>{{$studie->city}}</td>
           <td align="center">
-            <a class="btn btn-warning" href="{{route('studie.edit',$studie)}}"><span class="oi oi-pencil"></span></a>
-            <button type="button" value="{{$studie->id}}" class="btn btn-danger trash_stud" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>
+            <a class="btn btn-info" href="{{route('studie.edit',$studie)}}"><span class="oi oi-pencil"></span></a>
+            <button type="button" value="{{$studie->id}}" class="btn btn-info trash_stud" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>
           </td>
         </tr>
         @empty
@@ -93,8 +93,12 @@
 
 
 
+
+
 </div>
 </div>
+
+
 
 
 

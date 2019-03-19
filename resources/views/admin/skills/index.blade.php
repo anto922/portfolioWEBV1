@@ -31,8 +31,8 @@
       <td>{{$skill->level}} %</td>
 
       <td align="center">
-        <a class="btn btn-warning" href="{{route('skill.edit',$skill)}}"><span class="oi oi-pencil"></span></a>
-        <button type="button" value="{{$skill->id}}" class="btn btn-danger trash_skill" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>
+        <a class="btn btn-info" href="{{route('skill.edit',$skill)}}"><span class="oi oi-pencil"></span></a>
+        <button type="button" value="{{$skill->id}}" class="btn btn-info trash_skill" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>
       </td>
     </tr>
     @empty

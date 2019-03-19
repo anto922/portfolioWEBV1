@@ -20,7 +20,7 @@
 	<nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
 		<a class="navbar-brand col-sm-3 col-md-2 mr-0" href="{{url('/AdminPanel/Dashboard')}}"><span class="oi oi-person"> </span>  Administrador</a>
 		<ul class="navbar-nav px-3">
-			<li class="nav-item text-nowrap"><a class="btn btn-primary" target="_blank" href="{{url('/')}}">
+			<li class="nav-item text-nowrap"><a class="btn btn-info" target="_blank" href="{{url('/')}}">
 					 Ir a Web
 			</a>
 
@@ -105,7 +105,7 @@
 						</ul>
 					</div>
 					<h6 style="cursor: pointer" class="sidebar-heading d-flex justify-content-between align-items-center  mt-4 pt-4  pl-3 text-muted">
-						<a class="btn btn-danger" href="javascript:void(0)" href="{{ route('admin.logout') }}" onclick="event.preventDefault();
+						<a class="btn btn-info" href="javascript:void(0)" href="{{ route('admin.logout') }}" onclick="event.preventDefault();
 															 document.getElementById('logout-form').submit();">
 							<span class="oi oi-account-logout"></span> Salir
 					</a>

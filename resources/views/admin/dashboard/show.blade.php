@@ -18,7 +18,7 @@
       <div class="card bg-light">
         <div class="card-body">
           <h5 class="card-title text-center">Experiencia</h5>
-          <p class="card-text text-center text-primary display-4"><span class="oi oi-briefcase"></span>&nbsp;&nbsp;{{$exp}}</p>
+          <p class="card-text text-center text-info display-4"><span class="oi oi-briefcase"></span>&nbsp;&nbsp;{{$exp}}</p>
 
         </div>
     </a>
@@ -29,7 +29,7 @@
       <div class="card bg-light">
         <div class="card-body">
           <h5 class="card-title text-center">Habilidades</h5>
-          <p class="card-text text-center text-warning display-4"><span class="oi oi-brush"></span>&nbsp;&nbsp;{{$skills}}</p>
+          <p class="card-text text-center text-info display-4"><span class="oi oi-brush"></span>&nbsp;&nbsp;{{$skills}}</p>
 
         </div>
     </a>
@@ -40,7 +40,7 @@
       <div class="card bg-light">
         <div class="card-body">
           <h5 class="card-title text-center">Formación</h5>
-          <p class="card-text text-center text-danger display-4"><span class="oi oi-book"></span>&nbsp;&nbsp;{{$studies}}</p>
+          <p class="card-text text-center text-info display-4"><span class="oi oi-book"></span>&nbsp;&nbsp;{{$studies}}</p>
 
         </div>
     </a>
@@ -51,7 +51,7 @@
       <div class="card bg-light">
         <div class="card-body">
           <h5 class="card-title text-center">Trabajos</h5>
-          <p class="card-text text-center text-success display-4"><span class="oi oi-folder"></span>&nbsp;&nbsp;{{$works}}</p>
+          <p class="card-text text-center text-info display-4"><span class="oi oi-folder"></span>&nbsp;&nbsp;{{$works}}</p>
 
         </div>
     </a>

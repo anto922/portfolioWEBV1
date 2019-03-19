@@ -38,8 +38,8 @@
           <td>{{$exp->province}}</td>
           <td>{{$exp->city}}</td>
           <td align="center">
-            <a class="btn btn-warning" href="{{route('experience.edit',$exp)}}"><span class="oi oi-pencil"></span></a>
-            <button type="button" value="{{$exp->id}}" class="btn btn-danger trash_exp" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>
+            <a class="btn btn-info" href="{{route('experience.edit',$exp)}}"><span class="oi oi-pencil"></span></a>
+            <button type="button" value="{{$exp->id}}" class="btn btn-info trash_exp" data-toggle="modal" data-target="#exampleModalCenter"><span class="oi oi-trash"></span></button>
           </td>
         </tr>
         @empty

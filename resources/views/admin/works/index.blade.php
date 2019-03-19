@@ -15,7 +15,7 @@
 
 @endif @if($works->isNotEmpty())
 
-<table id="works_table" class="table table-striped table-bordered" style="width: 100%">
+<table id="works_table" class="table table-striped table-bordered" style="width:100%">
 	<thead>
 		<tr>
 			<th>Descripción</th>
@@ -31,8 +31,8 @@
 		<tr>
 			<td>{{$work->description}}</td>
 			<td>{{$work->skill_description}}</td>
-			<td align="center"><a class="btn btn-warning" href="{{route('work.edit',$work)}}"><span class="oi oi-pencil"></span></a>
-				<button type="button" value="{{$work->id}}" class="btn btn-danger trash_work" data-toggle="modal" data-target="#exampleModalCenter">
+			<td align="center"><a class="btn btn-info" href="{{route('work.edit',$work)}}"><span class="oi oi-pencil"></span></a>
+				<button type="button" value="{{$work->id}}" class="btn btn-info trash_work" data-toggle="modal" data-target="#exampleModalCenter">
 					<span class="oi oi-trash"></span>
 				</button></td>
 		</tr>

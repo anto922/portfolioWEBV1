@@ -90,7 +90,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-2 offset-10">
-			<button type="submit" class="btn btn-primary">Actualizar</button>
+			<button type="submit" class="btn btn-info">Actualizar</button>
 		</div>
 	</div>
 

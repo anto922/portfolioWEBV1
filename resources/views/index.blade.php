@@ -43,7 +43,7 @@
 						<ul class="timeline">
 							@foreach($exp as $ex)
 
-							<li><span class="text-info"><b>{{$ex->company}}</b></span> <span class="font-weight-light text-secondary float-right">{{date('Y',
+							<li><span class="text-info"><b>{{$ex->company}}</b></span> <br><span class="font-weight-light text-secondary">{{date('Y',
 														strtotime($ex->date_start))}} - {{$ex->date_end !=null ?
 																	date('Y',strtotime($ex->date_end)) : "Actualmente"}}</span>
 								<p class="alert alert-secondary">{{$ex->description}}</p>
@@ -75,7 +75,7 @@
 
 							@foreach($studies as $stu)
 
-							<li><span class="text-info"><b>{{$stu->school}}</b></span> <span class="font-weight-light text-secondary float-right">{{date('Y',
+							<li><span class="text-info"><b>{{$stu->school}}</b></span> <br><span class="font-weight-light text-secondary">{{date('Y',
 														strtotime($stu->date_start))}} - {{date('Y',
 														strtotime($stu->date_end))}}</span>
 								<p class="alert alert-secondary">{{$stu->course}}</p>
